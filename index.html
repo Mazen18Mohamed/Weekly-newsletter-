@@ -1,281 +1,381 @@
-﻿```html
+```html
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" class="dark">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>💥 النشرة الأسبوعية - الأسبوع 2</title>
-
+    <title>💥النشرة الإسبوعية💥 - الأسبوع 2</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cairo & Readex Pro -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Readex+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        cairo: ['Cairo', 'system-ui', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
     <style>
         body {
-            font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+            font-family: 'Cairo', 'Readex Pro', system-ui, -apple-system, sans-serif;
+            background-color: #0F172A; /* Night theme deep navy/slate background */
+            color: #E2E8F0;
             line-height: 1.8;
-            transition: background-color 0.2s ease, color 0.2s ease;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Reader Mode Palette */
-        .light-bg { background-color: #f8fafc; color: #1e293b; }
-        .dark-bg { background-color: #0b0f19; color: #e2e8f0; }
-
-        .widget-card-light {
-            background-color: #ffffff;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.05);
+        /* Standard news item card - Soft Blue Background */
+        .card-normal {
+            background-color: rgba(30, 58, 138, 0.25); /* Muted soft blue */
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 10px;
         }
 
-        .widget-card-dark {
-            background-color: #161e2e;
-            border: 1px solid #243046;
-            box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.3);
+        /* Updated news item card (⚡) - Soft Yellow Background */
+        .card-updated {
+            background-color: rgba(234, 179, 8, 0.15); /* Muted soft yellow/gold */
+            border: 1px solid rgba(234, 179, 8, 0.4);
+            border-radius: 10px;
         }
 
-        .badge-flash {
-            background-color: rgba(245, 158, 11, 0.15);
-            color: #f59e0b;
-            border: 1px solid rgba(245, 158, 11, 0.3);
+        /* Section wrapper card */
+        .section-card {
+            background-color: #1E293B;
+            border: 1px solid #334155;
+            border-radius: 14px;
+        }
+
+        /* Highlight box for updates summary */
+        .summary-box {
+            background: linear-gradient(135deg, rgba(234, 179, 8, 0.2) 0%, rgba(161, 98, 7, 0.15) 100%);
+            border: 1px solid rgba(234, 179, 8, 0.5);
+            border-radius: 12px;
         }
     </style>
 </head>
-<body class="dark-bg min-h-screen py-6 px-4 sm:px-6 md:py-10">
+<body class="min-h-screen py-6 px-4 sm:px-6 lg:px-8">
 
-    <div class="max-w-3xl mx-auto space-y-6">
-
-        <header id="header-widget" class="widget-card-dark rounded-2xl p-5 sm:p-6 transition-colors">
-            <div class="flex items-center justify-between border-b border-slate-200/20 dark:border-slate-700/50 pb-4 mb-4">
-                <div>
-                    <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-amber-500 flex items-center gap-2">
-                        <span>💥</span> النشرة الإسبوعية <span>💥</span>
-                    </h1>
-                </div>
-                <!-- Theme Toggle Button -->
-                <button onclick="toggleTheme()" class="p-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:opacity-80 transition font-bold text-xs flex items-center gap-2" title="تبديل وضع القراءة">
-                    <span id="theme-icon">🌙</span>
-                    <span id="theme-text" class="hidden sm:inline">الوضع المظلم</span>
-                </button>
+    <div class="max-w-4xl mx-auto space-y-6">
+        
+        <!-- Header Banner -->
+        <header class="section-card p-6 text-center border-t-4 border-t-amber-500">
+            <h1 class="text-2xl sm:text-3xl font-bold text-amber-400 mb-3 flex items-center justify-center gap-2">
+                <span>💥</span>
+                <span>النشرة الإسبوعية</span>
+                <span>💥</span>
+            </h1>
+            
+            <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-sm sm:text-base text-slate-300 font-medium mt-4 pt-3 border-t border-slate-700/60">
+                <span class="bg-slate-800 px-3 py-1 rounded-md text-slate-200">
+                    <strong class="text-slate-400">الأسبوع:</strong> 2
+                </span>
+                <span class="bg-amber-950/60 text-amber-300 border border-amber-800/60 px-3 py-1 rounded-md">
+                    <strong class="text-amber-400">عدد التحديثات:</strong> 2 (⚡)
+                </span>
+                <span class="bg-slate-800 px-3 py-1 rounded-md text-slate-200">
+                    <strong class="text-slate-400">تاريخ آخر تحديث:</strong> 2/10/2026
+                </span>
             </div>
 
-            <!-- Stats Metadata -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm font-semibold">
-                <div class="bg-slate-100 dark:bg-slate-800/60 px-3.5 py-2 rounded-xl flex items-center justify-between">
-                    <span class="text-slate-500 dark:text-slate-400">الأسبوع:</span>
-                    <span class="text-base text-indigo-600 dark:text-indigo-400">2</span>
-                </div>
-                <div class="bg-slate-100 dark:bg-slate-800/60 px-3.5 py-2 rounded-xl flex items-center justify-between">
-                    <span class="text-slate-500 dark:text-slate-400">عدد التحديثات:</span>
-                    <span class="text-base text-amber-500">2 (⚡)</span>
-                </div>
-                <div class="bg-slate-100 dark:bg-slate-800/60 px-3.5 py-2 rounded-xl flex items-center justify-between">
-                    <span class="text-slate-500 dark:text-slate-400">تاريخ آخر تحديث:</span>
-                    <span class="text-base text-emerald-600 dark:text-emerald-400" dir="ltr">2/10/2026</span>
-                </div>
+            <!-- Action Buttons Only (نسخ النص) -->
+            <div class="flex items-center justify-center gap-3 mt-5 pt-2">
+                <button 
+                    onclick="copyBulletinText()" 
+                    class="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-slate-200 border border-slate-600 rounded-lg text-sm font-semibold transition flex items-center gap-2"
+                >
+                    📋 نسخ النص
+                </button>
             </div>
         </header>
 
-        <section class="widget-card-dark rounded-2xl p-5 sm:p-6 transition-colors">
-            <h2 class="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200/20 dark:border-slate-700/50 pb-3 mb-4 flex items-center gap-2">
-                <span>📌</span> المواعيد وتعديلات الجدول
-            </h2>
+        <!-- Notification Toast -->
+        <div id="toast" class="fixed bottom-5 left-5 bg-amber-500 text-slate-950 font-bold px-4 py-2 rounded-lg shadow-lg text-sm opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+            تم نسخ النص بنجاح!
+        </div>
 
-            <div class="space-y-4 text-sm sm:text-base leading-relaxed">
-                
-                <!-- Sunday Lecture -->
-                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200/50 dark:border-slate-700/40">
-                    <p class="font-medium">
-                        • <strong class="text-indigo-600 dark:text-indigo-400">تعديل محاضرة الإنجليزي:</strong> أصبحت حضوري يوم الأحد من 2:00 إلى 4:00 مساءً (قاعة 301).
-                    </p>
-                </div>
+        <!-- MAIN CONTENT AREA -->
+        <main class="space-y-6">
 
-                <!-- Saturday Alerts -->
-                <div class="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20">
-                    <p class="font-bold text-amber-600 dark:text-amber-400 mb-2">
-                        ⚡• تنبيهات وتعديلات يوم السبت:
-                    </p>
-                    <ul class="space-y-2 pr-4 list-disc text-slate-800 dark:text-slate-200">
-                        <li>إلغاء محاضرة البايوكيمستري (1:00 - 2:00 ظهراً) واعتبار الوقت بريك للدفعة كلها.</li>
-                        <li>تنبيه لسكشن البايوكيمستري (د/ خالد): ضرورة الالتزام بالمواعيد وعدم التأخير أو الدخول بعد الدكتور (جروب A من 10:00 - جروب B من 11:00).</li>
-                    </ul>
-                </div>
+            <!-- SECTION 1: المواعيد وتعديلات الجدول -->
+            <section class="section-card p-5 sm:p-7">
+                <h2 class="text-xl font-bold text-slate-100 pb-3 mb-4 border-b border-slate-700/80 flex items-center gap-2">
+                    <span>📌</span>
+                    <span>المواعيد وتعديلات الجدول</span>
+                </h2>
 
-                <!-- Tuesday Online -->
-                <div class="p-3.5 rounded-xl bg-sky-500/10 border border-sky-500/20">
-                    <p class="font-bold text-sky-600 dark:text-sky-400 mb-2">
-                        ⚡• مواعيد الثلاثاء أونلاين (على Microsoft Teams):
-                    </p>
-                    <ul class="space-y-2 pr-4 list-disc text-slate-800 dark:text-slate-200">
-                        <li>سكاشن البايوكيمستري: جروب A (من 12:00 إلى 1:00) | جروب B (من 1:00 إلى 2:00).</li>
-                        <li>محاضرة البايوكيمستري التعويضية (د/ فتحية): من 3:00 إلى 4:00 عصراً.</li>
-                    </ul>
-                </div>
+                <div class="space-y-3">
+                    <!-- Normal item - Soft Blue -->
+                    <div class="news-item card-normal p-4">
+                        <p class="text-blue-100 font-medium">
+                            • تعديل محاضرة الإنجليزي: أصبحت حضوري يوم الأحد من 2:00 إلى 4:00 مساءً (قاعة 301).
+                        </p>
+                    </div>
 
-            </div>
-        </section>
+                    <!-- Updated item 1 - Soft Yellow -->
+                    <div class="news-item is-update card-updated p-4">
+                        <p class="font-bold text-amber-300 mb-1 flex items-start gap-1">
+                            <span>⚡•</span>
+                            <span>تنبيهات وتعديلات يوم السبت:</span>
+                        </p>
+                        <ul class="pr-5 space-y-1 text-amber-100/90 text-sm sm:text-base">
+                            <li class="relative pr-4">
+                                <span class="absolute right-0 text-amber-400/60">-</span>
+                                إلغاء محاضرة البايوكيمستري (1:00 - 2:00 ظهراً) واعتبار الوقت بريك للدفعة كلها.
+                            </li>
+                            <li class="relative pr-4">
+                                <span class="absolute right-0 text-amber-400/60">-</span>
+                                تنبيه لسكشن البايوكيمستري (د/ خالد): ضرورة الالتزام بالمواعيد وعدم التأخير أو الدخول بعد الدكتور (جروب A من 10:00 - جروب B من 11:00).
+                            </li>
+                        </ul>
+                    </div>
 
-        <section class="widget-card-dark rounded-2xl p-5 sm:p-6 transition-colors">
-            <h2 class="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200/20 dark:border-slate-700/50 pb-3 mb-4 flex items-center gap-2">
-                <span>📌</span> الأسيمنتات والتاسكات
-            </h2>
-
-            <div class="space-y-4 text-sm sm:text-base leading-relaxed">
-                
-                <!-- Computer Assignment -->
-                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200/50 dark:border-slate-700/40">
-                    <p class="font-bold text-indigo-600 dark:text-indigo-400 mb-1">
-                        • Computer Assignment:
-                    </p>
-                    <div class="pr-3 space-y-1">
-                        <p class="font-medium">- المطلوب: تقرير عن (Big data & IoT) يشمل:</p>
-                        <ol class="list-decimal list-inside pr-4 space-y-0.5 text-slate-700 dark:text-slate-300">
-                            <li>Definition</li>
-                            <li>Component</li>
-                            <li>Application</li>
-                            <li>PT application</li>
-                        </ol>
-                        <p>- <strong>الـ Deadline:</strong> الإثنين القادم.</p>
-                        <p>- <strong>التسليم:</strong> عبر فورم هيرسلها الدكتور.</p>
+                    <!-- Updated item 2 - Soft Yellow -->
+                    <div class="news-item is-update card-updated p-4">
+                        <p class="font-bold text-amber-300 mb-1 flex items-start gap-1">
+                            <span>⚡•</span>
+                            <span>مواعيد الثلاثاء أونلاين (على Microsoft Teams):</span>
+                        </p>
+                        <ul class="pr-5 space-y-1 text-amber-100/90 text-sm sm:text-base">
+                            <li class="relative pr-4">
+                                <span class="absolute right-0 text-amber-400/60">-</span>
+                                سكاشن البايوكيمستري: جروب A (من 12:00 إلى 1:00) | جروب B (من 1:00 إلى 2:00).
+                            </li>
+                            <li class="relative pr-4">
+                                <span class="absolute right-0 text-amber-400/60">-</span>
+                                محاضرة البايوكيمستري التعويضية (د/ فتحية): من 3:00 إلى 4:00 عصراً.
+                            </li>
+                        </ul>
                     </div>
                 </div>
+            </section>
 
-                <!-- Physiology Quiz -->
-                <div class="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/20">
-                    <p class="font-bold text-rose-600 dark:text-rose-400 mb-1">
-                        ⚡• كويز فسيولوجي (Physiology Quiz):
-                    </p>
-                    <ul class="pr-3 space-y-1">
-                        <li>- <strong>الميعاد:</strong> الإثنين 12/10.</li>
-                        <li>- <strong>المقرر:</strong> أول محاضرتين فسيولوجي.</li>
-                    </ul>
-                </div>
+            <!-- SECTION 2: الأسيمنتات والتاسكات -->
+            <section class="section-card p-5 sm:p-7">
+                <h2 class="text-xl font-bold text-slate-100 pb-3 mb-4 border-b border-slate-700/80 flex items-center gap-2">
+                    <span>📌</span>
+                    <span>الأسيمنتات والتاسكات</span>
+                </h2>
 
-                <!-- Physiology Assignment -->
-                <div class="p-3.5 rounded-xl bg-purple-500/10 border border-purple-500/20">
-                    <p class="font-bold text-purple-600 dark:text-purple-400 mb-1">
-                        ⚡• أسيمنت الفسيولوجي (Physiology Assignment):
-                    </p>
-                    <div class="pr-3 space-y-1">
-                        <p>- <strong>الـ Deadline:</strong> التسليم يوم الإثنين 12/10 (مع الكويز).</p>
-                        <p>- <strong>شروط التقديم:</strong></p>
-                        <ol class="list-decimal list-inside pr-4 space-y-1 text-slate-800 dark:text-slate-200">
-                            <li>يكتب في ورقة كبيرة (فلوسكاب أو كشكول كبير) ولن يُقبل في ورق صغير نهائياً.</li>
-                            <li>يوضع الأسيمنت في فايل شفاف (ممكن كل مجموعة تضع أوراقها في فايل واحد).</li>
-                        </ol>
+                <div class="space-y-3">
+                    <!-- Normal Item - Soft Blue -->
+                    <div class="news-item card-normal p-4">
+                        <p class="font-bold text-blue-200 mb-1">• Computer Assignment:</p>
+                        <div class="pr-4 space-y-1 text-blue-100/90 text-sm sm:text-base">
+                            <p class="relative pr-4">
+                                <span class="absolute right-0 text-blue-400/60">-</span>
+                                المطلوب: تقرير عن (Big data &amp; IoT) يشمل:
+                            </p>
+                            <ol class="pr-8 space-y-0.5 text-blue-200 font-medium my-1">
+                                <li>1. Definition</li>
+                                <li>2. Component</li>
+                                <li>3. Application</li>
+                                <li>4. PT application</li>
+                            </ol>
+                            <p class="relative pr-4">
+                                <span class="absolute right-0 text-blue-400/60">-</span>
+                                الـ Deadline: الإثنين القادم.
+                            </p>
+                            <p class="relative pr-4">
+                                <span class="absolute right-0 text-blue-400/60">-</span>
+                                التسليم: عبر فورم هيرسلها الدكتور.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Updated Quiz - Soft Yellow -->
+                    <div class="news-item is-update card-updated p-4">
+                        <p class="font-bold text-amber-300 mb-1 flex items-start gap-1">
+                            <span>⚡•</span>
+                            <span>كويز فسيولوجي (Physiology Quiz):</span>
+                        </p>
+                        <div class="pr-5 space-y-1 text-amber-100/90 text-sm sm:text-base">
+                            <p class="relative pr-4">
+                                <span class="absolute right-0 text-amber-400/60">-</span>
+                                الميعاد: الإثنين 12/10.
+                            </p>
+                            <p class="relative pr-4">
+                                <span class="absolute right-0 text-amber-400/60">-</span>
+                                المقرر: أول محاضرتين فسيولوجي.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Updated Assignment - Soft Yellow -->
+                    <div class="news-item is-update card-updated p-4">
+                        <p class="font-bold text-amber-300 mb-1 flex items-start gap-1">
+                            <span>⚡•</span>
+                            <span>أسيمنت الفسيولوجي (Physiology Assignment):</span>
+                        </p>
+                        <div class="pr-5 space-y-1 text-amber-100/90 text-sm sm:text-base">
+                            <p class="relative pr-4">
+                                <span class="absolute right-0 text-amber-400/60">-</span>
+                                الـ Deadline: التسليم يوم الإثنين 12/10 (مع الكويز).
+                            </p>
+                            <p class="relative pr-4">
+                                <span class="absolute right-0 text-amber-400/60">-</span>
+                                شروط التقديم:
+                            </p>
+                            <ol class="pr-8 space-y-0.5 text-amber-200 font-medium my-1">
+                                <li>1. يكتب في ورقة كبيرة (فلوسكاب أو كشكول كبير) ولن يُقبل في ورق صغير نهائياً.</li>
+                                <li>2. يوضع الأسيمنت في فايل شفاف (ممكن كل مجموعة تضع أوراقها في فايل واحد).</li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
+            </section>
 
-            </div>
-        </section>
+            <!-- SECTION 3: حاجات فرعية -->
+            <section class="section-card p-5 sm:p-7">
+                <h2 class="text-xl font-bold text-slate-100 pb-3 mb-4 border-b border-slate-700/80 flex items-center justify-between flex-wrap gap-2">
+                    <span class="flex items-center gap-2">
+                        <span>📌</span>
+                        <span>حاجات فرعية</span>
+                    </span>
+                    <span class="text-xs sm:text-sm font-normal text-slate-400 bg-slate-800 px-3 py-1 rounded-md border border-slate-700">
+                        وقفنا فين - Week 2
+                    </span>
+                </h2>
 
-        <section class="widget-card-dark rounded-2xl p-5 sm:p-6 transition-colors">
-            <h2 class="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200/20 dark:border-slate-700/50 pb-3 mb-4 flex items-center gap-2">
-                <span>📌</span> حاجات فرعية <span class="text-sm font-normal text-slate-500 dark:text-slate-400">(وقفنا فين - Week 2)</span>
-            </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm sm:text-base">
+                    <div class="news-item card-normal p-3.5">
+                        • <strong class="text-blue-200">الباثولوجي:</strong> لآخر الـ 2 PDF الجداد (هنتسأل عليهم المحاضرة الجاية).
+                    </div>
+                    <div class="news-item card-normal p-3.5">
+                        • <strong class="text-blue-200">البايوكيمستري (د/ فتحية):</strong> لآخر صفحة.
+                    </div>
+                    <div class="news-item card-normal p-3.5">
+                        • <strong class="text-blue-200">الأناتومي:</strong> لآخر الـ PDF الأول.
+                    </div>
+                    <div class="news-item card-normal p-3.5">
+                        • <strong class="text-blue-200">الفسيولوجي (محاضرة):</strong> لصفحة 24 (قبل الـ White blood cells).
+                    </div>
+                    <div class="news-item card-normal p-3.5">
+                        • <strong class="text-blue-200">الفسيولوجي (سكشن):</strong> لصفحة 14.
+                    </div>
+                    <div class="news-item card-normal p-3.5">
+                        • <strong class="text-blue-200">الهيستولوجي:</strong> لآخر صفحة.
+                    </div>
+                    <div class="news-item card-normal p-3.5">
+                        • <strong class="text-blue-200">البايولوجي:</strong> لآخر صفحة.
+                    </div>
+                    <div class="news-item card-normal p-3.5">
+                        • <strong class="text-blue-200">البايوفيزيكس (محاضرة):</strong> لصفحة 61.
+                    </div>
+                    <div class="news-item card-normal p-3.5">
+                        • <strong class="text-blue-200">البايوفيزيكس (سكشن):</strong> لآخر صفحة.
+                    </div>
+                    <div class="news-item card-normal p-3.5">
+                        • <strong class="text-blue-200">الإنجليزي:</strong> أول 3 صفحات من PDF الأسئلة (وتجهيز ص 5 و6 للمحاضرة الجاية).
+                    </div>
+                    <div class="news-item card-normal p-3.5">
+                        • <strong class="text-blue-200">Communication:</strong> لصفحة 17 (قبل الـ Written communication).
+                    </div>
+                    <div class="news-item card-normal p-3.5">
+                        • <strong class="text-blue-200">الكمبيوتر:</strong> الـ PDF الأول بالكامل.
+                    </div>
+                    <div class="news-item card-normal p-3.5 md:col-span-2">
+                        • <strong class="text-blue-200">سكشن البايوكيمستري:</strong> الـ PDF مش معانا لسه.
+                    </div>
+                </div>
+            </section>
 
-            <ul class="divide-y divide-slate-200/30 dark:divide-slate-800 text-sm sm:text-base">
-                <li class="py-2.5 flex items-start gap-2">
-                    <span class="text-emerald-500 font-bold">•</span>
-                    <span><strong>الباثولوجي:</strong> لآخر الـ 2 PDF الجداد (هنتسأل عليهم المحاضرة الجاية).</span>
-                </li>
-                <li class="py-2.5 flex items-start gap-2">
-                    <span class="text-emerald-500 font-bold">•</span>
-                    <span><strong>البايوكيمستري (د/ فتحية):</strong> لآخر صفحة.</span>
-                </li>
-                <li class="py-2.5 flex items-start gap-2">
-                    <span class="text-emerald-500 font-bold">•</span>
-                    <span><strong>الأناتومي:</strong> لآخر الـ PDF الأول.</span>
-                </li>
-                <li class="py-2.5 flex items-start gap-2">
-                    <span class="text-emerald-500 font-bold">•</span>
-                    <span><strong>الفسيولوجي (محاضرة):</strong> لصفحة 24 (قبل الـ White blood cells).</span>
-                </li>
-                <li class="py-2.5 flex items-start gap-2">
-                    <span class="text-emerald-500 font-bold">•</span>
-                    <span><strong>الفسيولوجي (سكشن):</strong> لصفحة 14.</span>
-                </li>
-                <li class="py-2.5 flex items-start gap-2">
-                    <span class="text-emerald-500 font-bold">•</span>
-                    <span><strong>الهيستولوجي:</strong> لآخر صفحة.</span>
-                </li>
-                <li class="py-2.5 flex items-start gap-2">
-                    <span class="text-emerald-500 font-bold">•</span>
-                    <span><strong>البايولوجي:</strong> لآخر صفحة.</span>
-                </li>
-                <li class="py-2.5 flex items-start gap-2">
-                    <span class="text-emerald-500 font-bold">•</span>
-                    <span><strong>البايوفيزيكس (محاضرة):</strong> لصفحة 61.</span>
-                </li>
-                <li class="py-2.5 flex items-start gap-2">
-                    <span class="text-emerald-500 font-bold">•</span>
-                    <span><strong>البايوفيزيكس (سكشن):</strong> لآخر صفحة.</span>
-                </li>
-                <li class="py-2.5 flex items-start gap-2">
-                    <span class="text-emerald-500 font-bold">•</span>
-                    <span><strong>الإنجليزي:</strong> أول 3 صفحات من PDF الأسئلة (وتجهيز ص 5 و6 للمحاضرة الجاية).</span>
-                </li>
-                <li class="py-2.5 flex items-start gap-2">
-                    <span class="text-emerald-500 font-bold">•</span>
-                    <span><strong>Communication:</strong> لصفحة 17 (قبل الـ Written communication).</span>
-                </li>
-                <li class="py-2.5 flex items-start gap-2">
-                    <span class="text-emerald-500 font-bold">•</span>
-                    <span><strong>الكمبيوتر:</strong> الـ PDF الأول بالكامل.</span>
-                </li>
-                <li class="py-2.5 flex items-start gap-2 text-slate-500 dark:text-slate-400">
-                    <span class="text-amber-500 font-bold">•</span>
-                    <span><strong>سكشن البايوكيمستري:</strong> الـ PDF مش معانا لسه.</span>
-                </li>
-            </ul>
-        </section>
+        </main>
 
-        <footer class="text-center text-xs text-slate-500 py-4">
-            قراءة مريحة • الأسبوع الثاني (2026)
-        </footer>
+        <!-- Footer Note -->
+    <footer class="section-card p-5 border-r-4 border-r-amber-500 bg-amber-950/20 text-slate-300 text-sm leading-relaxed">
+        <p class="font-bold text-amber-400 mb-1">ملحوظة:</p>
+        <p>
+            علامة ⚡ ترمز إلى أن الخبر أو المحتوى من المحتويات اللتي اضيفت أو تم تعديلها في التحديث وكلما زاد رقم التحديث زاد عدد ⚡ قبل الخبر.
+        </p>
+    </footer>
 
     </div>
 
+    <!-- JavaScript Logic -->
     <script>
-        function toggleTheme() {
-            const html = document.documentElement;
-            const isDark = html.classList.contains('dark');
-            const themeIcon = document.getElementById('theme-icon');
-            const themeText = document.getElementById('theme-text');
-            const cards = document.querySelectorAll('header, section');
+        const originalTextContent = `*💥النشرة الإسبوعية💥*
+ _الأسبوع: 2_
+_عدد التحديثات: 2_(⚡)
+_تاريخ آخر تحديث: 2/10/2026_
 
-            if (isDark) {
-                html.classList.remove('dark');
-                document.body.className = 'light-bg min-h-screen py-6 px-4 sm:px-6 md:py-10';
-                cards.forEach(c => {
-                    c.classList.remove('widget-card-dark');
-                    c.classList.add('widget-card-light');
-                });
-                themeIcon.textContent = '☀️';
-                themeText.textContent = 'الوضع النهاري';
-            } else {
-                html.classList.add('dark');
-                document.body.className = 'dark-bg min-h-screen py-6 px-4 sm:px-6 md:py-10';
-                cards.forEach(c => {
-                    c.classList.remove('widget-card-light');
-                    c.classList.add('widget-card-dark');
-                });
-                themeIcon.textContent = '🌙';
-                themeText.textContent = 'الوضع المظلم';
+📌*المواعيد وتعديلات الجدول*
+
+• تعديل محاضرة الإنجليزي: أصبحت حضوري يوم الأحد من 2:00 إلى 4:00 مساءً (قاعة 301).
+
+⚡• تنبيهات وتعديلات يوم السبت:
+  - إلغاء محاضرة البايوكيمستري (1:00 - 2:00 ظهراً) واعتبار الوقت بريك للدفعة كلها.
+  - تنبيه لسكشن البايوكيمستري (د/ خالد): ضرورة الالتزام بالمواعيد وعدم التأخير أو الدخول بعد الدكتور (جروب A من 10:00 - جروب B من 11:00).
+
+⚡• مواعيد الثلاثاء أونلاين (على Microsoft Teams):
+  - سكاشن البايوكيمستري: جروب A (من 12:00 إلى 1:00) | جروب B (من 1:00 إلى 2:00).
+  - محاضرة البايوكيمستري التعويضية (د/ فتحية): من 3:00 إلى 4:00 عصراً.
+
+📌*الأسيمنتات والتاسكات*
+
+• Computer Assignment:
+  - المطلوب: تقرير عن (Big data & IoT) يشمل:
+    1. Definition
+    2. Component
+    3. Application
+    4. PT application
+  - الـ Deadline: الإثنين القادم.
+  - التسليم: عبر فورم هيرسلها الدكتور.
+
+⚡• كويز فسيولوجي (Physiology Quiz):
+  - الميعاد: الإثنين 12/10.
+  - المقرر: أول محاضرتين فسيولوجي.
+
+⚡• أسيمنت الفسيولوجي (Physiology Assignment):
+  - الـ Deadline: التسليم يوم الإثنين 12/10 (مع الكويز).
+  - شروط التقديم:
+    1. يكتب في ورقة كبيرة (فلوسكاب أو كشكول كبير) ولن يُقبل في ورق صغير نهائياً.
+    2. يوضع الأسيمنت في فايل شفاف (ممكن كل مجموعة تضع أوراقها في فايل واحد).
+
+📌*حاجات فرعية*
+(وقفنا فين - Week 2)
+• الباثولوجي: لآخر الـ 2 PDF الجداد (هنتسأل عليهم المحاضرة الجاية).
+• البايوكيمستري (د/ فتحية): لآخر صفحة.
+• الأناتومي: لآخر الـ PDF الأول.
+• الفسيولوجي (محاضرة): لصفحة 24 (قبل الـ White blood cells).
+• الفسيولوجي (سكشن): لصفحة 14.
+• الهيستولوجي: لآخر صفحة.
+• البايولوجي: لآخر صفحة.
+• البايوفيزيكس (محاضرة): لصفحة 61.
+• البايوفيزيكس (سكشن): لآخر صفحة.
+• الإنجليزي: أول 3 صفحات من PDF الأسئلة (وتجهيز ص 5 و6 للمحاضرة الجاية).
+• Communication: لصفحة 17 (قبل الـ Written communication).
+• الكمبيوتر: الـ PDF الأول بالكامل.
+• سكشن البايوكيمستري: الـ PDF مش معانا لسه.
+
+ملحوظة:
+علامة ⚡ ترمز إلى أن الخبر أو المحتوى من المحتويات اللتي اضيفت أو تم تعديلها في التحديث 
+وكلما زاد رقم التحديث زاد عدد ⚡ قبل الخبر`;
+
+        // Copy bulletin text to clipboard
+        function copyBulletinText() {
+            const textarea = document.createElement('textarea');
+            textarea.value = originalTextContent;
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                document.execCommand('copy');
+                showToast('تم نسخ نص النشرة بنجاح!');
+            } catch (err) {
+                showToast('تعذر النسخ تلقائياً');
             }
+            
+            document.body.removeChild(textarea);
+        }
+
+        // Display quick notification toast
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.remove('opacity-0', 'pointer-events-none');
+            toast.classList.add('opacity-100');
+            
+            setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0', 'pointer-events-none');
+            }, 2500);
         }
     </script>
 </body>
