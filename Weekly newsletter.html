@@ -1,0 +1,283 @@
+﻿```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💥 النشرة الأسبوعية - الأسبوع 2</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cairo: ['Cairo', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+            line-height: 1.8;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        /* Reader Mode Palette */
+        .light-bg { background-color: #f8fafc; color: #1e293b; }
+        .dark-bg { background-color: #0b0f19; color: #e2e8f0; }
+
+        .widget-card-light {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .widget-card-dark {
+            background-color: #161e2e;
+            border: 1px solid #243046;
+            box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.3);
+        }
+
+        .badge-flash {
+            background-color: rgba(245, 158, 11, 0.15);
+            color: #f59e0b;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+    </style>
+</head>
+<body class="dark-bg min-h-screen py-6 px-4 sm:px-6 md:py-10">
+
+    <div class="max-w-3xl mx-auto space-y-6">
+
+        <header id="header-widget" class="widget-card-dark rounded-2xl p-5 sm:p-6 transition-colors">
+            <div class="flex items-center justify-between border-b border-slate-200/20 dark:border-slate-700/50 pb-4 mb-4">
+                <div>
+                    <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-amber-500 flex items-center gap-2">
+                        <span>💥</span> النشرة الإسبوعية <span>💥</span>
+                    </h1>
+                </div>
+                <!-- Theme Toggle Button -->
+                <button onclick="toggleTheme()" class="p-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:opacity-80 transition font-bold text-xs flex items-center gap-2" title="تبديل وضع القراءة">
+                    <span id="theme-icon">🌙</span>
+                    <span id="theme-text" class="hidden sm:inline">الوضع المظلم</span>
+                </button>
+            </div>
+
+            <!-- Stats Metadata -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm font-semibold">
+                <div class="bg-slate-100 dark:bg-slate-800/60 px-3.5 py-2 rounded-xl flex items-center justify-between">
+                    <span class="text-slate-500 dark:text-slate-400">الأسبوع:</span>
+                    <span class="text-base text-indigo-600 dark:text-indigo-400">2</span>
+                </div>
+                <div class="bg-slate-100 dark:bg-slate-800/60 px-3.5 py-2 rounded-xl flex items-center justify-between">
+                    <span class="text-slate-500 dark:text-slate-400">عدد التحديثات:</span>
+                    <span class="text-base text-amber-500">2 (⚡)</span>
+                </div>
+                <div class="bg-slate-100 dark:bg-slate-800/60 px-3.5 py-2 rounded-xl flex items-center justify-between">
+                    <span class="text-slate-500 dark:text-slate-400">تاريخ آخر تحديث:</span>
+                    <span class="text-base text-emerald-600 dark:text-emerald-400" dir="ltr">2/10/2026</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="widget-card-dark rounded-2xl p-5 sm:p-6 transition-colors">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200/20 dark:border-slate-700/50 pb-3 mb-4 flex items-center gap-2">
+                <span>📌</span> المواعيد وتعديلات الجدول
+            </h2>
+
+            <div class="space-y-4 text-sm sm:text-base leading-relaxed">
+                
+                <!-- Sunday Lecture -->
+                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200/50 dark:border-slate-700/40">
+                    <p class="font-medium">
+                        • <strong class="text-indigo-600 dark:text-indigo-400">تعديل محاضرة الإنجليزي:</strong> أصبحت حضوري يوم الأحد من 2:00 إلى 4:00 مساءً (قاعة 301).
+                    </p>
+                </div>
+
+                <!-- Saturday Alerts -->
+                <div class="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20">
+                    <p class="font-bold text-amber-600 dark:text-amber-400 mb-2">
+                        ⚡• تنبيهات وتعديلات يوم السبت:
+                    </p>
+                    <ul class="space-y-2 pr-4 list-disc text-slate-800 dark:text-slate-200">
+                        <li>إلغاء محاضرة البايوكيمستري (1:00 - 2:00 ظهراً) واعتبار الوقت بريك للدفعة كلها.</li>
+                        <li>تنبيه لسكشن البايوكيمستري (د/ خالد): ضرورة الالتزام بالمواعيد وعدم التأخير أو الدخول بعد الدكتور (جروب A من 10:00 - جروب B من 11:00).</li>
+                    </ul>
+                </div>
+
+                <!-- Tuesday Online -->
+                <div class="p-3.5 rounded-xl bg-sky-500/10 border border-sky-500/20">
+                    <p class="font-bold text-sky-600 dark:text-sky-400 mb-2">
+                        ⚡• مواعيد الثلاثاء أونلاين (على Microsoft Teams):
+                    </p>
+                    <ul class="space-y-2 pr-4 list-disc text-slate-800 dark:text-slate-200">
+                        <li>سكاشن البايوكيمستري: جروب A (من 12:00 إلى 1:00) | جروب B (من 1:00 إلى 2:00).</li>
+                        <li>محاضرة البايوكيمستري التعويضية (د/ فتحية): من 3:00 إلى 4:00 عصراً.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="widget-card-dark rounded-2xl p-5 sm:p-6 transition-colors">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200/20 dark:border-slate-700/50 pb-3 mb-4 flex items-center gap-2">
+                <span>📌</span> الأسيمنتات والتاسكات
+            </h2>
+
+            <div class="space-y-4 text-sm sm:text-base leading-relaxed">
+                
+                <!-- Computer Assignment -->
+                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200/50 dark:border-slate-700/40">
+                    <p class="font-bold text-indigo-600 dark:text-indigo-400 mb-1">
+                        • Computer Assignment:
+                    </p>
+                    <div class="pr-3 space-y-1">
+                        <p class="font-medium">- المطلوب: تقرير عن (Big data & IoT) يشمل:</p>
+                        <ol class="list-decimal list-inside pr-4 space-y-0.5 text-slate-700 dark:text-slate-300">
+                            <li>Definition</li>
+                            <li>Component</li>
+                            <li>Application</li>
+                            <li>PT application</li>
+                        </ol>
+                        <p>- <strong>الـ Deadline:</strong> الإثنين القادم.</p>
+                        <p>- <strong>التسليم:</strong> عبر فورم هيرسلها الدكتور.</p>
+                    </div>
+                </div>
+
+                <!-- Physiology Quiz -->
+                <div class="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/20">
+                    <p class="font-bold text-rose-600 dark:text-rose-400 mb-1">
+                        ⚡• كويز فسيولوجي (Physiology Quiz):
+                    </p>
+                    <ul class="pr-3 space-y-1">
+                        <li>- <strong>الميعاد:</strong> الإثنين 12/10.</li>
+                        <li>- <strong>المقرر:</strong> أول محاضرتين فسيولوجي.</li>
+                    </ul>
+                </div>
+
+                <!-- Physiology Assignment -->
+                <div class="p-3.5 rounded-xl bg-purple-500/10 border border-purple-500/20">
+                    <p class="font-bold text-purple-600 dark:text-purple-400 mb-1">
+                        ⚡• أسيمنت الفسيولوجي (Physiology Assignment):
+                    </p>
+                    <div class="pr-3 space-y-1">
+                        <p>- <strong>الـ Deadline:</strong> التسليم يوم الإثنين 12/10 (مع الكويز).</p>
+                        <p>- <strong>شروط التقديم:</strong></p>
+                        <ol class="list-decimal list-inside pr-4 space-y-1 text-slate-800 dark:text-slate-200">
+                            <li>يكتب في ورقة كبيرة (فلوسكاب أو كشكول كبير) ولن يُقبل في ورق صغير نهائياً.</li>
+                            <li>يوضع الأسيمنت في فايل شفاف (ممكن كل مجموعة تضع أوراقها في فايل واحد).</li>
+                        </ol>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="widget-card-dark rounded-2xl p-5 sm:p-6 transition-colors">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200/20 dark:border-slate-700/50 pb-3 mb-4 flex items-center gap-2">
+                <span>📌</span> حاجات فرعية <span class="text-sm font-normal text-slate-500 dark:text-slate-400">(وقفنا فين - Week 2)</span>
+            </h2>
+
+            <ul class="divide-y divide-slate-200/30 dark:divide-slate-800 text-sm sm:text-base">
+                <li class="py-2.5 flex items-start gap-2">
+                    <span class="text-emerald-500 font-bold">•</span>
+                    <span><strong>الباثولوجي:</strong> لآخر الـ 2 PDF الجداد (هنتسأل عليهم المحاضرة الجاية).</span>
+                </li>
+                <li class="py-2.5 flex items-start gap-2">
+                    <span class="text-emerald-500 font-bold">•</span>
+                    <span><strong>البايوكيمستري (د/ فتحية):</strong> لآخر صفحة.</span>
+                </li>
+                <li class="py-2.5 flex items-start gap-2">
+                    <span class="text-emerald-500 font-bold">•</span>
+                    <span><strong>الأناتومي:</strong> لآخر الـ PDF الأول.</span>
+                </li>
+                <li class="py-2.5 flex items-start gap-2">
+                    <span class="text-emerald-500 font-bold">•</span>
+                    <span><strong>الفسيولوجي (محاضرة):</strong> لصفحة 24 (قبل الـ White blood cells).</span>
+                </li>
+                <li class="py-2.5 flex items-start gap-2">
+                    <span class="text-emerald-500 font-bold">•</span>
+                    <span><strong>الفسيولوجي (سكشن):</strong> لصفحة 14.</span>
+                </li>
+                <li class="py-2.5 flex items-start gap-2">
+                    <span class="text-emerald-500 font-bold">•</span>
+                    <span><strong>الهيستولوجي:</strong> لآخر صفحة.</span>
+                </li>
+                <li class="py-2.5 flex items-start gap-2">
+                    <span class="text-emerald-500 font-bold">•</span>
+                    <span><strong>البايولوجي:</strong> لآخر صفحة.</span>
+                </li>
+                <li class="py-2.5 flex items-start gap-2">
+                    <span class="text-emerald-500 font-bold">•</span>
+                    <span><strong>البايوفيزيكس (محاضرة):</strong> لصفحة 61.</span>
+                </li>
+                <li class="py-2.5 flex items-start gap-2">
+                    <span class="text-emerald-500 font-bold">•</span>
+                    <span><strong>البايوفيزيكس (سكشن):</strong> لآخر صفحة.</span>
+                </li>
+                <li class="py-2.5 flex items-start gap-2">
+                    <span class="text-emerald-500 font-bold">•</span>
+                    <span><strong>الإنجليزي:</strong> أول 3 صفحات من PDF الأسئلة (وتجهيز ص 5 و6 للمحاضرة الجاية).</span>
+                </li>
+                <li class="py-2.5 flex items-start gap-2">
+                    <span class="text-emerald-500 font-bold">•</span>
+                    <span><strong>Communication:</strong> لصفحة 17 (قبل الـ Written communication).</span>
+                </li>
+                <li class="py-2.5 flex items-start gap-2">
+                    <span class="text-emerald-500 font-bold">•</span>
+                    <span><strong>الكمبيوتر:</strong> الـ PDF الأول بالكامل.</span>
+                </li>
+                <li class="py-2.5 flex items-start gap-2 text-slate-500 dark:text-slate-400">
+                    <span class="text-amber-500 font-bold">•</span>
+                    <span><strong>سكشن البايوكيمستري:</strong> الـ PDF مش معانا لسه.</span>
+                </li>
+            </ul>
+        </section>
+
+        <footer class="text-center text-xs text-slate-500 py-4">
+            قراءة مريحة • الأسبوع الثاني (2026)
+        </footer>
+
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.classList.contains('dark');
+            const themeIcon = document.getElementById('theme-icon');
+            const themeText = document.getElementById('theme-text');
+            const cards = document.querySelectorAll('header, section');
+
+            if (isDark) {
+                html.classList.remove('dark');
+                document.body.className = 'light-bg min-h-screen py-6 px-4 sm:px-6 md:py-10';
+                cards.forEach(c => {
+                    c.classList.remove('widget-card-dark');
+                    c.classList.add('widget-card-light');
+                });
+                themeIcon.textContent = '☀️';
+                themeText.textContent = 'الوضع النهاري';
+            } else {
+                html.classList.add('dark');
+                document.body.className = 'dark-bg min-h-screen py-6 px-4 sm:px-6 md:py-10';
+                cards.forEach(c => {
+                    c.classList.remove('widget-card-light');
+                    c.classList.add('widget-card-dark');
+                });
+                themeIcon.textContent = '🌙';
+                themeText.textContent = 'الوضع المظلم';
+            }
+        }
+    </script>
+</body>
+</html>
+```
