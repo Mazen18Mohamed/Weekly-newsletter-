@@ -24,7 +24,7 @@
             <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-sm sm:text-base text-slate-300 font-medium mt-4 pt-3 border-t border-slate-700/60">
                 <span class="bg-slate-800 px-3 py-1 rounded-md text-slate-200"><strong class="text-slate-400">الأسبوع:</strong> 4</span>
                 <span class="bg-slate-800 px-3 py-1 rounded-md text-slate-200"><strong class="text-slate-400">عدد التحديثات:</strong> 1</span>
-                <span class="bg-slate-800 px-3 py-1 rounded-md text-slate-200"><strong class="text-slate-400">تاريخ آخر تحديث:</strong> 14/10/2026 (3:40pm)</span>
+                <span class="bg-slate-800 px-3 py-1 rounded-md text-slate-200"><strong class="text-slate-400">تاريخ آخر تحديث:</strong> 14/10/2026 (5:00pm)</span>
             </div>
             <div class="flex items-center justify-center gap-3 mt-5 pt-2">
                 <button onclick="copyBulletinText()" class="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-slate-200 border border-slate-600 rounded-lg text-sm font-semibold transition flex items-center gap-2">📋 نسخ النص</button>
@@ -106,7 +106,26 @@
                     <span class="text-xs sm:text-sm font-normal text-slate-400 bg-slate-800 px-3 py-1 rounded-md border border-slate-700">وقفنا فين - Week 4</span>
                 </h2>
                 <div class="space-y-3">
-                    <div class="text-center py-6 text-slate-500 text-sm italic border border-dashed border-slate-700/60 rounded-lg">لا توجد معلومات في هذا القسم حالياً.</div>
+                    <div class="news-item card-normal p-4">
+                        <p class="font-bold text-blue-200 mb-1 flex items-start gap-1">
+                            <span>• </span>
+                            <span>وقفنا فين (week 4)</span>
+                        </p>
+                        <ul class="pr-5 space-y-1 text-blue-100/90 text-sm sm:text-base">
+                            <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> بايوفيزيكس : لحد صفحة 100</li>
+                            <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> سكشن البايوفيزيكس : لحد صفحة 42</li>
+                            <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> اناتومي : لحد اخر صفحة (سواء محاضرة أو سكشن)</li>
+                            <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> باثولوجي : لحد اخر صفحة</li>
+                            <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> محاضرة الفسيولوجي :لحد اخر صفحة</li>
+                            <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> سكشن الفسيولوجي : لحد صفحة 10</li>
+                            <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> هيستولوجي : لحد اخر صفحة (في فايل المحاضرة مش من الكتاب)</li>
+                            <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> بايولوجي : لحد اخر صفحة (في الفايل بتاع المحاضرة مش الكتاب)</li>
+                            <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> ال English : اخر pdf حلينا اول صفحة</li>
+                            <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> وياريت نحفظ الكلمات في اخر صفحة</li>
+                            <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> ال comunication : لحد اخر صفحة</li>
+                            <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> بايوكيمستري: نخلص pdf بتاع lec3+4 بس</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
         </main>
@@ -119,7 +138,7 @@
         const originalTextContent = `*💥النشرة الأسبوعية💥*
  _الأسبوع: 4_
 _عدد التحديثات: 1_
-_تاريخ آخر تحديث: 14/10/2026 (3:40pm)_
+_تاريخ آخر تحديث: 14/10/2026 (5:00pm)_
 
 
 📌*المواعيد وتعديلات الجدول*
@@ -155,6 +174,19 @@ _تاريخ آخر تحديث: 14/10/2026 (3:40pm)_
 
 
 📌*حاجات فرعية*
+• وقفنا فين (week 4)
+  - بايوفيزيكس : لحد صفحة 100
+  - سكشن البايوفيزيكس : لحد صفحة 42
+  - اناتومي : لحد اخر صفحة (سواء محاضرة أو سكشن)
+  - باثولوجي : لحد اخر صفحة
+  - محاضرة الفسيولوجي :لحد اخر صفحة
+  - سكشن الفسيولوجي : لحد صفحة 10
+  - هيستولوجي : لحد اخر صفحة (في فايل المحاضرة مش من الكتاب)
+  - بايولوجي : لحد اخر صفحة (في الفايل بتاع المحاضرة مش الكتاب)
+  - ال English : اخر pdf حلينا اول صفحة
+  - وياريت نحفظ الكلمات في اخر صفحة
+  - ال comunication : لحد اخر صفحة
+  - بايوكيمستري: نخلص pdf بتاع lec3+4 بس
 
 
 
