@@ -23,8 +23,8 @@
             </h1>
             <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-sm sm:text-base text-slate-300 font-medium mt-4 pt-3 border-t border-slate-700/60">
                 <span class="bg-slate-800 px-3 py-1 rounded-md text-slate-200"><strong class="text-slate-400">الأسبوع:</strong> 5</span>
-                <span class="bg-slate-800 px-3 py-1 rounded-md text-slate-200"><strong class="text-slate-400">عدد التحديثات:</strong> 0</span>
-                <span class="bg-slate-800 px-3 py-1 rounded-md text-slate-200"><strong class="text-slate-400">تاريخ آخر تحديث:</strong> 23/10/2026 (11:18am)</span>
+                <span class="bg-slate-800 px-3 py-1 rounded-md text-slate-200"><strong class="text-slate-400">عدد التحديثات:</strong> 1</span>
+                <span class="bg-slate-800 px-3 py-1 rounded-md text-slate-200"><strong class="text-slate-400">تاريخ آخر تحديث:</strong> 26/10/2026 (10:30pm)</span>
             </div>
             <div class="flex items-center justify-center gap-3 mt-5 pt-2">
                 <button onclick="copyBulletinText()" class="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-slate-200 border border-slate-600 rounded-lg text-sm font-semibold transition flex items-center gap-2">📋 نسخ النص</button>
@@ -42,6 +42,18 @@
                         </p>
                         <ul class="pr-5 space-y-1 text-blue-100/90 text-sm sm:text-base">
                             <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> مفيش محاضرة بايو فيزيكس يوم السبت، وهتكون يوم الثلاثاء (أونلاين) من 10:00 صباحاً إلى 12:00 ظهراً إن شاء الله.</li>
+                        </ul>
+                    </div>
+                    <div class="news-item card-updated p-4">
+                        <p class="font-bold text-amber-300 mb-1 flex items-start gap-1">
+                            <span>⚡ </span>
+                            <span>محاضرات وسكاشن الثلاثاء (أونلاين):</span>
+                        </p>
+                        <ul class="pr-5 space-y-1 text-amber-100/90 text-sm sm:text-base">
+                            <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> محاضرة بايو فيزيكس (مراجعة الميدترم): الساعة 10:00 صباحاً.</li>
+                            <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> سكشن بايوكيمستري: سينشر مسجلاً لمشاهدته في أي وقت يناسبنا.</li>
+                            <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> محاضرة كمبيوتر: الساعة 5:00 مساءً.</li>
+                            <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> سكشن كمبيوتر (للدفعة بالكامل): بعد محاضرة الكمبيوتر مباشرة.</li>
                         </ul>
                     </div>
                 </div>
@@ -123,6 +135,20 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="news-item card-updated p-4">
+                        <p class="font-bold text-amber-300 mb-1 flex items-start gap-1">
+                            <span>⚡ </span>
+                            <span>اسايمنت الأناتومي (Anatomy Assignment):</span>
+                        </p>
+                        <ul class="pr-5 space-y-1 text-amber-100/90 text-sm sm:text-base">
+                            <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> الموضوع (Topic): Shoulder joint.</li>
+                            <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> الشروط: مكتوب بخط اليد (Hand written)، عدد الصفحات: 3 صفحات + الغلاف (Cover).</li>
+                            <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> بيانات الغلاف المطلوبة: Name – ID – Year.</li>
+                            <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> المحتوى المطلوب: يتضمن رسومات (Diagrams) ومراجع (References).</li>
+                            <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> الدرجة (Marks): 20 درجة.</li>
+                            <li class="relative pr-4"><span class="absolute right-0 text-slate-400/60">-</span> الـ Deadline: يوم الأحد 15/11/2026.</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
             <section class="section-card p-5 sm:p-7">
@@ -143,13 +169,19 @@
     <script>
         const originalTextContent = `*💥النشرة الأسبوعية💥*
  _الأسبوع: 5_
-_عدد التحديثات: 0_
-_تاريخ آخر تحديث: 23/10/2026 (11:18am)_
+_عدد التحديثات: 1_
+_تاريخ آخر تحديث: 26/10/2026 (10:30pm)_
 
 
 📌*المواعيد وتعديلات الجدول*
 • تعديل محاضرة البايوفيزيكس:
   - مفيش محاضرة بايو فيزيكس يوم السبت، وهتكون يوم الثلاثاء (أونلاين) من 10:00 صباحاً إلى 12:00 ظهراً إن شاء الله.
+
+⚡• محاضرات وسكاشن الثلاثاء (أونلاين):
+  - محاضرة بايو فيزيكس (مراجعة الميدترم): الساعة 10:00 صباحاً.
+  - سكشن بايوكيمستري: سينشر مسجلاً لمشاهدته في أي وقت يناسبنا.
+  - محاضرة كمبيوتر: الساعة 5:00 مساءً.
+  - سكشن كمبيوتر (للدفعة بالكامل): بعد محاضرة الكمبيوتر مباشرة.
 
 
 📌*الأسيمنتات والتاسكات*
@@ -186,6 +218,14 @@ _تاريخ آخر تحديث: 23/10/2026 (11:18am)_
 
   - لينك فورم تسليم الاسايمنتين: https://forms.gle/ouUGc6kmZD4fQRfk9
 
+⚡• اسايمنت الأناتومي (Anatomy Assignment):
+  - الموضوع (Topic): Shoulder joint.
+  - الشروط: مكتوب بخط اليد (Hand written)، عدد الصفحات: 3 صفحات + الغلاف (Cover).
+  - بيانات الغلاف المطلوبة: Name – ID – Year.
+  - المحتوى المطلوب: يتضمن رسومات (Diagrams) ومراجع (References).
+  - الدرجة (Marks): 20 درجة.
+  - الـ Deadline: يوم الأحد 15/11/2026.
+
 
 📌*حاجات فرعية*
 
@@ -193,7 +233,7 @@ _تاريخ آخر تحديث: 23/10/2026 (11:18am)_
 
 ملحوظة:
 علامة ⚡ ترمز إلى أن الخبر أو المحتوى من المحتويات اللتي اضيفت أو تم تعديلها في التحديث 
-وكلما زاد رقم التحديث زاد عدد ⚡ قبل الخبر`;
+وكلما زاد رقم التحديث زاد عدد ⚡ قبل الخبر.`;
 
         function copyBulletinText() {
             const textarea = document.createElement('textarea');
