@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>💥 النشرة الأسبوعية وجدول الميدترم 💥</title>
+    <title>💥النشرة الأسبوعية💥 - الأسبوع 5</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,42 +13,25 @@
         .card-normal { background-color: rgba(30, 58, 138, 0.25); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 10px; }
         .card-updated { background-color: rgba(234, 179, 8, 0.15); border: 1px solid rgba(234, 179, 8, 0.4); border-radius: 10px; }
         .section-card { background-color: #1E293B; border: 1px solid #334155; border-radius: 14px; }
-        .tab-btn-active { background-color: #3b82f6; color: #ffffff; border-color: #60a5fa; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); }
-        .tab-btn-inactive { background-color: #1e293b; color: #94a3b8; border-color: #334155; }
-        .tab-btn-inactive:hover { background-color: #334155; color: #f8fafc; }
     </style>
 </head>
 <body class="min-h-screen py-6 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto space-y-6">
-        
         <header class="section-card p-6 text-center border-t-4 border-t-amber-500">
             <h1 class="text-2xl sm:text-3xl font-bold text-amber-400 mb-3 flex items-center justify-center gap-2">
-                <span>💥</span><span>النشرة الأسبوعية والميدترم</span><span>💥</span>
+                <span>💥</span><span>النشرة الأسبوعية</span><span>💥</span>
             </h1>
             <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-sm sm:text-base text-slate-300 font-medium mt-4 pt-3 border-t border-slate-700/60">
                 <span class="bg-slate-800 px-3 py-1 rounded-md text-slate-200"><strong class="text-slate-400">الأسبوع:</strong> 5</span>
                 <span class="bg-slate-800 px-3 py-1 rounded-md text-slate-200"><strong class="text-slate-400">عدد التحديثات:</strong> 1</span>
                 <span class="bg-slate-800 px-3 py-1 rounded-md text-slate-200"><strong class="text-slate-400">تاريخ آخر تحديث:</strong> 27/10/2026 (10:30pm)</span>
             </div>
-            
-            <div class="flex items-center justify-center gap-3 mt-6 pt-3 border-t border-slate-700/40">
-                <button id="btn-bulletin" onclick="switchTab('bulletin')" class="tab-btn-active px-5 py-2.5 rounded-xl font-bold text-sm sm:text-base transition border flex items-center gap-2">
-                    <span>💥</span><span>النشرة الأسبوعية</span>
-                </button>
-                <button id="btn-midterm" onclick="switchTab('midterm')" class="tab-btn-inactive px-5 py-2.5 rounded-xl font-bold text-sm sm:text-base transition border flex items-center gap-2">
-                    <span>📅</span><span>جدول الميدترم والمصادر</span>
-                </button>
+            <div class="flex items-center justify-center gap-3 mt-5 pt-2">
+                <button onclick="copyBulletinText()" class="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-slate-200 border border-slate-600 rounded-lg text-sm font-semibold transition flex items-center gap-2">📋 نسخ النص</button>
             </div>
         </header>
-
         <div id="toast" class="fixed bottom-5 left-5 bg-amber-500 text-slate-950 font-bold px-4 py-2 rounded-lg shadow-lg text-sm opacity-0 pointer-events-none transition-opacity duration-300 z-50">تم نسخ النص بنجاح!</div>
-
-        <!-- Tab 1: النشرة الأسبوعية -->
-        <main id="tab-bulletin" class="space-y-6">
-            <div class="flex items-center justify-end">
-                <button onclick="copyBulletinText()" class="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-slate-200 border border-slate-600 rounded-lg text-sm font-semibold transition flex items-center gap-2">📋 نسخ نص النشرة الأسبوعية</button>
-            </div>
-
+        <main class="space-y-6">
             <section class="section-card p-5 sm:p-7">
                 <h2 class="text-xl font-bold text-slate-100 pb-3 mb-4 border-b border-slate-700/80 flex items-center gap-2"><span>📌</span><span>المواعيد وتعديلات الجدول</span></h2>
                 <div class="space-y-3">
@@ -65,7 +48,6 @@
                     </div>
                 </div>
             </section>
-
             <section class="section-card p-5 sm:p-7">
                 <h2 class="text-xl font-bold text-slate-100 pb-3 mb-4 border-b border-slate-700/80 flex items-center gap-2"><span>📌</span><span>الأسيمنتات والتاسكات</span></h2>
                 <div class="space-y-3">
@@ -85,7 +67,6 @@
                     </div>
                 </div>
             </section>
-
             <section class="section-card p-5 sm:p-7">
                 <h2 class="text-xl font-bold text-slate-100 pb-3 mb-4 border-b border-slate-700/80 flex items-center justify-between flex-wrap gap-2">
                     <span class="flex items-center gap-2"><span>📌</span><span>حاجات فرعية</span></span>
@@ -95,227 +76,13 @@
                     <div class="text-center py-6 text-slate-500 text-sm italic border border-dashed border-slate-700/60 rounded-lg">لا توجد معلومات في هذا القسم حالياً.</div>
                 </div>
             </section>
-
-            <footer class="section-card p-5 border-r-4 border-r-amber-500 bg-amber-950/20 text-slate-300 text-sm leading-relaxed">
-                <p class="font-bold text-amber-400 mb-1">ملحوظة:</p>
-                <p>علامة ⚡ ترمز إلى أن الخبر أو المحتوى من المحتويات اللتي اضيفت أو تم تعديلها في التحديث وكلما زاد رقم التحديث زاد عدد ⚡ قبل الخبر.</p>
-            </footer>
         </main>
-
-        <!-- Tab 2: جدول امتحانات الميدترم والمصادر -->
-        <main id="tab-midterm" class="space-y-6 hidden">
-            
-            <div class="section-card p-4 sm:p-5 flex flex-wrap items-center justify-between gap-4 border-r-4 border-r-blue-500">
-                <div>
-                    <h2 class="text-lg font-bold text-slate-100 flex items-center gap-2"><span>📅</span><span>امتحانات منتصف الفصل الدراسي (Fall 2026-2027)</span></h2>
-                    <p class="text-xs sm:text-sm text-slate-400 mt-0.5">المواد مرتبة أفقياً وأبجدياً لسهولة الوصول المباشر.</p>
-                </div>
-                <div class="flex flex-wrap items-center gap-2 text-xs font-semibold">
-                    <span class="bg-cyan-950/80 text-cyan-300 border border-cyan-800/60 px-3 py-1.5 rounded-lg flex items-center gap-1.5">
-                        <span class="w-2 h-2 rounded-full bg-cyan-400"></span>إلكتروني (جامعة حلوان الحكومية)
-                    </span>
-                    <span class="bg-red-950/80 text-red-300 border border-red-800/60 px-3 py-1.5 rounded-lg flex items-center gap-1.5">
-                        <span class="w-2 h-2 rounded-full bg-red-400"></span>في الكلية On Campus
-                    </span>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="section-card p-5 border border-slate-700/80 hover:border-slate-500 transition space-y-3">
-                    <div class="flex items-start justify-between gap-2 border-b border-slate-700/60 pb-2.5">
-                        <div>
-                            <h3 class="text-lg font-bold text-amber-400">1. Anatomy</h3>
-                            <p class="text-xs text-slate-400 font-medium">السبت 31/10/2026</p>
-                        </div>
-                        <span class="bg-cyan-950 text-cyan-300 border border-cyan-700/60 text-xs px-2.5 py-1 rounded-md font-semibold">إلكتروني (حكومية)</span>
-                    </div>
-                    <div class="text-sm space-y-1.5 text-slate-300">
-                        <p><strong class="text-slate-400">⏰ التوقيت:</strong> 12:30 PM - 1:15 PM</p>
-                        <p><strong class="text-slate-400">📍 المكان:</strong> معامل طب (3-4)</p>
-                        <p><strong class="text-slate-400">📖 المقرر:</strong> First 4 lectures (Up to Axilla)</p>
-                    </div>
-                    <a href="https://drive.google.com/drive/folders/1hJcthFte7fyVsmZ5_1SXvYMRGVJcW0Tw" target="_blank" rel="noopener noreferrer" class="mt-2 w-full py-2 bg-slate-800 hover:bg-slate-700 text-blue-300 border border-slate-600 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2">
-                        📁 ملخصات وتدريبات Anatomy
-                    </a>
-                </div>
-                <div class="section-card p-5 border border-slate-700/80 hover:border-slate-500 transition space-y-3">
-                    <div class="flex items-start justify-between gap-2 border-b border-slate-700/60 pb-2.5">
-                        <div>
-                            <h3 class="text-lg font-bold text-amber-400">2. Physiology</h3>
-                            <p class="text-xs text-slate-400 font-medium">الأحد 1/11/2026</p>
-                        </div>
-                        <span class="bg-red-950 text-red-300 border border-red-700/60 text-xs px-2.5 py-1 rounded-md font-semibold">في الكلية On Campus</span>
-                    </div>
-                    <div class="text-sm space-y-1.5 text-slate-300">
-                        <p><strong class="text-slate-400">⏰ التوقيت:</strong> 10:30 AM - 11:15 AM</p>
-                        <p><strong class="text-slate-400">📍 المكان:</strong> Hall (201 - 202 - 301 - Hall 5)</p>
-                        <p><strong class="text-slate-400">📖 المقرر:</strong> First 5 lectures</p>
-                    </div>
-                    <a href="https://drive.google.com/drive/folders/1lu80DJIgMXHCmpjAnU-u0qg8jYPFn9T2" target="_blank" rel="noopener noreferrer" class="mt-2 w-full py-2 bg-slate-800 hover:bg-slate-700 text-blue-300 border border-slate-600 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2">
-                        📁 ملخصات وتدريبات Physiology
-                    </a>
-                </div>
-                <div class="section-card p-5 border border-slate-700/80 hover:border-slate-500 transition space-y-3">
-                    <div class="flex items-start justify-between gap-2 border-b border-slate-700/60 pb-2.5">
-                        <div>
-                            <h3 class="text-lg font-bold text-amber-400">3. Biology</h3>
-                            <p class="text-xs text-slate-400 font-medium">الإثنين 2/11/2026</p>
-                        </div>
-                        <span class="bg-cyan-950 text-cyan-300 border border-cyan-700/60 text-xs px-2.5 py-1 rounded-md font-semibold">إلكتروني (حكومية)</span>
-                    </div>
-                    <div class="text-sm space-y-1.5 text-slate-300">
-                        <p><strong class="text-slate-400">⏰ التوقيت:</strong> 3:30 PM - 4:15 PM</p>
-                        <p><strong class="text-slate-400">📍 المكان:</strong> معامل طب (3-4)</p>
-                        <p><strong class="text-slate-400">📖 المقرر:</strong> First 5 lectures</p>
-                    </div>
-                    <a href="https://drive.google.com/drive/folders/1KmJu_tn5xk6Zi1n6H3IhsgnPLfnVU8U5" target="_blank" rel="noopener noreferrer" class="mt-2 w-full py-2 bg-slate-800 hover:bg-slate-700 text-blue-300 border border-slate-600 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2">
-                        📁 ملخصات وتدريبات Biology
-                    </a>
-                </div>
-                <div class="section-card p-5 border border-slate-700/80 hover:border-slate-500 transition space-y-3">
-                    <div class="flex items-start justify-between gap-2 border-b border-slate-700/60 pb-2.5">
-                        <div>
-                            <h3 class="text-lg font-bold text-amber-400">4. Biophysics</h3>
-                            <p class="text-xs text-slate-400 font-medium">الثلاثاء 3/11/2026</p>
-                        </div>
-                        <span class="bg-cyan-950 text-cyan-300 border border-cyan-700/60 text-xs px-2.5 py-1 rounded-md font-semibold">إلكتروني (حكومية)</span>
-                    </div>
-                    <div class="text-sm space-y-1.5 text-slate-300">
-                        <p><strong class="text-slate-400">⏰ التوقيت:</strong> 1:30 PM - 2:15 PM</p>
-                        <p><strong class="text-slate-400">📍 المكان:</strong> معامل طب (3-4)</p>
-                        <p><strong class="text-slate-400">📖 المقرر:</strong> First 4 lectures</p>
-                    </div>
-                    <a href="https://drive.google.com/drive/folders/1nnfVP6V6is66LKIsVEQI2Yp3TZSyPtti" target="_blank" rel="noopener noreferrer" class="mt-2 w-full py-2 bg-slate-800 hover:bg-slate-700 text-blue-300 border border-slate-600 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2">
-                        📁 ملخصات وتدريبات Biophysics
-                    </a>
-                </div>
-                <div class="section-card p-5 border border-slate-700/80 hover:border-slate-500 transition space-y-3">
-                    <div class="flex items-start justify-between gap-2 border-b border-slate-700/60 pb-2.5">
-                        <div>
-                            <h3 class="text-lg font-bold text-amber-400">5. Communication Skills</h3>
-                            <p class="text-xs text-slate-400 font-medium">الأربعاء 4/11/2026</p>
-                        </div>
-                        <span class="bg-cyan-950 text-cyan-300 border border-cyan-700/60 text-xs px-2.5 py-1 rounded-md font-semibold">إلكتروني (حكومية)</span>
-                    </div>
-                    <div class="text-sm space-y-1.5 text-slate-300">
-                        <p><strong class="text-slate-400">⏰ التوقيت:</strong> 3:00 PM - 3:45 PM</p>
-                        <p><strong class="text-slate-400">📍 المكان:</strong> معامل طب (3-4)</p>
-                        <p><strong class="text-slate-400">📖 المقرر:</strong> First 5 lectures</p>
-                    </div>
-                    <a href="https://drive.google.com/drive/folders/12pD6kmm4zfT1vVGwFVBB_CFUkZ1NEMkl" target="_blank" rel="noopener noreferrer" class="mt-2 w-full py-2 bg-slate-800 hover:bg-slate-700 text-blue-300 border border-slate-600 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2">
-                        📁 ملخصات وتدريبات Communication
-                    </a>
-                </div>
-                <div class="section-card p-5 border border-slate-700/80 hover:border-slate-500 transition space-y-3">
-                    <div class="flex items-start justify-between gap-2 border-b border-slate-700/60 pb-2.5">
-                        <div>
-                            <h3 class="text-lg font-bold text-amber-400">6. Biochemistry</h3>
-                            <p class="text-xs text-slate-400 font-medium">الخميس 5/11/2026</p>
-                        </div>
-                        <span class="bg-cyan-950 text-cyan-300 border border-cyan-700/60 text-xs px-2.5 py-1 rounded-md font-semibold">إلكتروني (حكومية)</span>
-                    </div>
-                    <div class="text-sm space-y-1.5 text-slate-300">
-                        <p><strong class="text-slate-400">⏰ التوقيت:</strong> 1:00 PM - 1:45 PM</p>
-                        <p><strong class="text-slate-400">📍 المكان:</strong> معامل طب (3-4)</p>
-                        <p><strong class="text-slate-400">📖 المقرر:</strong> First 4 lectures</p>
-                    </div>
-                    <a href="https://drive.google.com/drive/folders/1KE0P3zYfL8ud5bz1QQXACSitG0iPO-4V" target="_blank" rel="noopener noreferrer" class="mt-2 w-full py-2 bg-slate-800 hover:bg-slate-700 text-blue-300 border border-slate-600 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2">
-                        📁 ملخصات وتدريبات Biochemistry
-                    </a>
-                </div>
-                <div class="section-card p-5 border border-slate-700/80 hover:border-slate-500 transition space-y-3">
-                    <div class="flex items-start justify-between gap-2 border-b border-slate-700/60 pb-2.5">
-                        <div>
-                            <h3 class="text-lg font-bold text-amber-400">7. Pathology</h3>
-                            <p class="text-xs text-slate-400 font-medium">السبت 7/11/2026</p>
-                        </div>
-                        <span class="bg-red-950 text-red-300 border border-red-700/60 text-xs px-2.5 py-1 rounded-md font-semibold">في الكلية On Campus</span>
-                    </div>
-                    <div class="text-sm space-y-1.5 text-slate-300">
-                        <p><strong class="text-slate-400">⏰ التوقيت:</strong> 11:30 AM - 12:15 PM</p>
-                        <p><strong class="text-slate-400">📍 المكان:</strong> Hall (201 - 202 - 301 - 302)</p>
-                        <p><strong class="text-slate-400">📖 المقرر:</strong> First 4 lectures</p>
-                    </div>
-                    <a href="https://drive.google.com/drive/folders/1-iMaSXinVoFMFidruDdCSeo9-wwg8885" target="_blank" rel="noopener noreferrer" class="mt-2 w-full py-2 bg-slate-800 hover:bg-slate-700 text-blue-300 border border-slate-600 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2">
-                        📁 ملخصات وتدريبات Pathology
-                    </a>
-                </div>
-                <div class="section-card p-5 border border-slate-700/80 hover:border-slate-500 transition space-y-3">
-                    <div class="flex items-start justify-between gap-2 border-b border-slate-700/60 pb-2.5">
-                        <div>
-                            <h3 class="text-lg font-bold text-amber-400">8.  Computer</h3>
-                            <p class="text-xs text-slate-400 font-medium">الأحد 8/11/2026</p>
-                        </div>
-                        <span class="bg-cyan-950 text-cyan-300 border border-cyan-700/60 text-xs px-2.5 py-1 rounded-md font-semibold">إلكتروني (حكومية)</span>
-                    </div>
-                    <div class="text-sm space-y-1.5 text-slate-300">
-                        <p><strong class="text-slate-400">⏰ التوقيت:</strong> 4:30 PM - 5:15 PM</p>
-                        <p><strong class="text-slate-400">📍 المكان:</strong> معامل طب (3-4)</p>
-                        <p><strong class="text-slate-400">📖 المقرر:</strong> First 5 lectures</p>
-                    </div>
-                    <a href="https://drive.google.com/drive/folders/16N0c1Q9AK7gngDNrGUrD9IaKxFZf5ooa" target="_blank" rel="noopener noreferrer" class="mt-2 w-full py-2 bg-slate-800 hover:bg-slate-700 text-blue-300 border border-slate-600 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2">
-                        📁 ملخصات وتدريبات Computer
-                    </a>
-                </div>
-                <div class="section-card p-5 border border-slate-700/80 hover:border-slate-500 transition space-y-3">
-                    <div class="flex items-start justify-between gap-2 border-b border-slate-700/60 pb-2.5">
-                        <div>
-                            <h3 class="text-lg font-bold text-amber-400">9. Histology</h3>
-                            <p class="text-xs text-slate-400 font-medium">الإثنين 9/11/2026</p>
-                        </div>
-                        <span class="bg-cyan-950 text-cyan-300 border border-cyan-700/60 text-xs px-2.5 py-1 rounded-md font-semibold">إلكتروني (حكومية)</span>
-                    </div>
-                    <div class="text-sm space-y-1.5 text-slate-300">
-                        <p><strong class="text-slate-400">⏰ التوقيت:</strong> 3:00 PM - 3:45 PM</p>
-                        <p><strong class="text-slate-400">📍 المكان:</strong> معامل طب (3-4)</p>
-                        <p><strong class="text-slate-400">📖 المقرر:</strong> First 5 lectures</p>
-                    </div>
-                    <a href="https://drive.google.com/drive/folders/1k35POS7NksySd0GvC0UoCg2eZV0n9HmC" target="_blank" rel="noopener noreferrer" class="mt-2 w-full py-2 bg-slate-800 hover:bg-slate-700 text-blue-300 border border-slate-600 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2">
-                        📁 ملخصات وتدريبات Histology
-                    </a>
-                </div>
-                <div class="section-card p-5 border border-slate-700/80 hover:border-slate-500 transition space-y-3">
-                    <div class="flex items-start justify-between gap-2 border-b border-slate-700/60 pb-2.5">
-                        <div>
-                            <h3 class="text-lg font-bold text-amber-400">10.  English</h3>
-                            <p class="text-xs text-slate-400 font-medium">الثلاثاء 10/11/2026</p>
-                        </div>
-                        <span class="bg-cyan-950 text-cyan-300 border border-cyan-700/60 text-xs px-2.5 py-1 rounded-md font-semibold">إلكتروني (حكومية)</span>
-                    </div>
-                    <div class="text-sm space-y-1.5 text-slate-300">
-                        <p><strong class="text-slate-400">⏰ التوقيت:</strong> 10:30 AM - 11:15 AM</p>
-                        <p><strong class="text-slate-400">📍 المكان:</strong> معامل طب (3-4)</p>
-                        <p><strong class="text-slate-400">📖 المقرر:</strong> All lectures</p>
-                    </div>
-                    <a href="https://drive.google.com/drive/folders/1bs0lpfYqV-MVU9vdLDjhvJh3adsijx6L" target="_blank" rel="noopener noreferrer" class="mt-2 w-full py-2 bg-slate-800 hover:bg-slate-700 text-blue-300 border border-slate-600 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2">
-                        📁 ملخصات وتدريبات English
-                    </a>
-                </div>
-            </div>
-        </main>
-
+        <footer class="section-card p-5 border-r-4 border-r-amber-500 bg-amber-950/20 text-slate-300 text-sm leading-relaxed">
+            <p class="font-bold text-amber-400 mb-1">ملحوظة:</p>
+            <p>علامة ⚡ ترمز إلى أن الخبر أو المحتوى من المحتويات اللتي اضيفت أو تم تعديلها في التحديث وكلما زاد رقم التحديث زاد عدد ⚡ قبل الخبر.</p>
+        </footer>
     </div>
-
     <script>
-        function switchTab(tabName) {
-            const bulletinTab = document.getElementById('tab-bulletin');
-            const midtermTab = document.getElementById('tab-midterm');
-            const btnBulletin = document.getElementById('btn-bulletin');
-            const btnMidterm = document.getElementById('btn-midterm');
-
-            if (tabName === 'bulletin') {
-                bulletinTab.classList.remove('hidden');
-                midtermTab.classList.add('hidden');
-                btnBulletin.className = 'tab-btn-active px-5 py-2.5 rounded-xl font-bold text-sm sm:text-base transition border flex items-center gap-2';
-                btnMidterm.className = 'tab-btn-inactive px-5 py-2.5 rounded-xl font-bold text-sm sm:text-base transition border flex items-center gap-2';
-            } else {
-                bulletinTab.classList.add('hidden');
-                midtermTab.classList.remove('hidden');
-                btnBulletin.className = 'tab-btn-inactive px-5 py-2.5 rounded-xl font-bold text-sm sm:text-base transition border flex items-center gap-2';
-                btnMidterm.className = 'tab-btn-active px-5 py-2.5 rounded-xl font-bold text-sm sm:text-base transition border flex items-center gap-2';
-            }
-        }
-
         const originalTextContent = `*💥النشرة الأسبوعية💥*
  _الأسبوع: 5_
 _عدد التحديثات: 1_
@@ -347,7 +114,6 @@ _تاريخ آخر تحديث: 27/10/2026 (10:30pm)_
 ملحوظة:
 علامة ⚡ ترمز إلى أن الخبر أو المحتوى من المحتويات اللتي اضيفت أو تم تعديلها في التحديث 
 وكلما زاد رقم التحديث زاد عدد ⚡ قبل الخبر`;
-
         function copyBulletinText() {
             const textarea = document.createElement('textarea');
             textarea.value = originalTextContent;
@@ -356,7 +122,6 @@ _تاريخ آخر تحديث: 27/10/2026 (10:30pm)_
             try { document.execCommand('copy'); showToast('تم نسخ نص النشرة بنجاح!'); } catch (err) { showToast('تعذر النسخ'); }
             document.body.removeChild(textarea);
         }
-
         function showToast(message) {
             const toast = document.getElementById('toast');
             toast.textContent = message;
