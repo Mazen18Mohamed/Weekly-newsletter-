@@ -170,14 +170,14 @@ html[data-theme=dark] .strip.warn .strip-head .n { background: #D0A25E; }
     <button class="menu-btn" id="menuBtn" onclick="openMenu()" aria-label="القائمة"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
     <div class="kicker">النشرة الأسبوعية</div>
     <h1>المواعيد والتنبيهات</h1>
-    <div class="meta">آخر تحديث: الثلاثاء 24/11/2026 - 12:30 ظهراً &nbsp;•&nbsp; عدد التحديثات: <span id="updCount">3</span></div>
+    <div class="meta">آخر تحديث: الثلاثاء 24/11/2026 - 12:30 ظهراً</div>
     
   </header>
 
   <div id="strip" class="strip" hidden></div>
 
   <nav class="index">
-    <a href="#s1">المواعيد والتعديلات <b>1</b></a>
+    <a href="#s1">المواعيد والتعديلات <b>0</b></a>
     <a href="#s2">الأسايمنتات <b>1</b></a>
     <a href="#s3">الكويزات والامتحانات <b>2</b></a>
     <a href="#s4">ملاحظات <b>3</b></a>
@@ -185,12 +185,8 @@ html[data-theme=dark] .strip.warn .strip-head .n { background: #D0A25E; }
 
   <main>
     <section id="s1">
-      <div class="sec-head"><span class="sec-num">1</span><h2>المواعيد والتعديلات</h2><span class="count">1 عنصر</span></div>
-      <div class="item" id="i-tue" data-event="2026-11-24T10:30:00+02:00" data-updated="2026-11-24T09:48:00+02:00" data-change="سكشن البايوكيمستري النهاردة بيبدأ 10:30 بدل 10">
-  <div class="item-top"><span class="day">الثلاثاء 24/11</span><span class="badge b-online">أونلاين</span></div>
-  <h3>جدول النهاردة</h3>
-  <ul><li>سكشن بايوكيمستري: جروب A من 10:30 لـ 11:30، وجروب B من 11:30 لـ 12:30 (اتأخر نص ساعة)</li><li>محاضرة بايوفيزكس: من 3 لـ 5</li><li>محاضرة كمبيوتر: 7 مساءً، وبعدها سكشن للدفعة كلها <a class="joinbtn" href="https://teams.microsoft.com/meet/3557195248460353?p=Wt8BtcrTXTSgb9XIYt" target="_blank" rel="noopener">انضمام</a></li></ul>
-</div>
+      <div class="sec-head"><span class="sec-num">1</span><h2>المواعيد والتعديلات</h2><span class="count">0 عناصر</span></div>
+      <p class="empty" style="margin:6px 4px;opacity:.75">مفيش مواعيد أو تعديلات حاليا.</p>
     </section>
     <section id="s2">
       <div class="sec-head"><span class="sec-num">2</span><h2>الأسايمنتات</h2><span class="count">1 عنصر</span></div>
@@ -245,7 +241,7 @@ html[data-theme=dark] .strip.warn .strip-head .n { background: #D0A25E; }
 آخر تحديث: الثلاثاء 24/11/2026
 
 المواعيد والتعديلات:
-- الثلاثاء 24/11 (أونلاين): سكشن بايوكيمستري جروب A من 10:30 لـ 11:30 وجروب B من 11:30 لـ 12:30 (اتأخر نص ساعة)، بايوفيزكس 3 لـ 5، كمبيوتر 7 مساءً وبعدها سكشن للكل
+- مفيش حاليا
 
 الأسايمنتات:
 - إنجلش: 20 جملة من الـ PDF باستخدام الـ vocabulary bank وrelative clause و cause and effect. الـ deadline السبت 28/11 وبيتسلم على Google Classroom
@@ -332,7 +328,7 @@ function render(){
       li.appendChild(a);ul.appendChild(li);});
     document.getElementById('seen').onclick=function(){setLV('now');};
   }
-  document.getElementById('updCount').textContent=ar(changes.length);
+  var uc=document.getElementById('updCount');if(uc)uc.textContent=ar(changes.length);
 }
 sortSections();render();
 </script>
